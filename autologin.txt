@@ -1,0 +1,9 @@
+
+
+// In theme's functions.php
+//Autologin after registration by gravity form
+function make_user_autologin_after_registration($user_id, $config, $entry, $password){
+	wp_set_auth_cookie( $user_id, false, '' );
+}
+add_action('gform_user_registered','make_user_autologin_after_registration', 10, 4);
+
